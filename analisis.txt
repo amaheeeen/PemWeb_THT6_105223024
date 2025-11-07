@@ -1,0 +1,37 @@
+Nama: [Nama Mahasiswa]
+NIM: [NIM Mahasiswa]
+Mata Kuliah: Praktikum Pemrograman Web
+Tugas: Analisis Bootstrap 5 vs Tailwind CSS
+
+---
+
+1. Proses Pengembangan
+
+Perbedaan utama yang saya rasakan sangat jelas. Saat menggunakan Bootstrap, saya merasa seperti "merakit" layout menggunakan komponen yang sudah jadi. Saya hanya perlu memanggil `.card`, `.form-control`, dan `.btn`, lalu Bootstrap menangani semua styling-nya. Prosesnya cepat untuk menghasilkan sesuatu yang terlihat bagus.
+
+Saat menggunakan Tailwind, saya merasa seperti "membangun" komponen dari nol. Saya harus mendefinisikan setiap aspek visual (shadow, border-radius, padding, warna font) menggunakan kelas utilitas.
+
+* **Lebih Cepat (Setup Awal):** Bootstrap terasa jauh lebih cepat untuk setup awal dan membuat prototipe fungsional. Saya tidak perlu memikirkan desain, cukup fokus pada struktur.
+* **Kontrol Lebih Besar:** Tailwind memberi saya kontrol 100% atas styling. Saya bisa mengatur layout dan tampilan elemen tanpa harus menulis CSS kustom atau menimpa (override) style bawaan framework, tidak seperti Bootstrap yang kadang perlu di-override.
+
+---
+
+2. Ukuran File & Kustomisasi
+
+* **Tampilan File HTML:**
+    * **`portofolio-bootstrap.html`** memiliki kode HTML yang lebih "bersih" (sedikit kelas). Kelasnya semantik, seperti `.card`, yang jelas fungsinya.
+    * **`portofolio-tailwind.html`** jelas lebih "verbose" (banyak kelas). Satu elemen `<input>` saja bisa memiliki 10-15 kelas utilitas hanya untuk styling.
+
+* **Pendekatan Kustomisasi (berdasarkan Modul 6):**
+    * **Bootstrap:** Kustomisasi utamanya dilakukan dengan menimpa (override) variabel Sass bawaan. Jika ingin mengubah warna `.btn-primary` secara global, saya harus mengubah variabel `$primary` di file Sass.
+    * **Tailwind:** Kustomisasi dilakukan melalui file `tailwind.config.js`. Saya bisa menambahkan warna baru, font, atau mengubah breakpoint (meskipun di THT ini kita pakai CDN, modul menjelaskan cara kustomisasi ini).
+
+---
+
+3. Kesimpulan
+
+Berdasarkan pengalaman ini:
+
+* **Saya akan memilih Bootstrap 5:** Ketika saya perlu membuat proyek dengan cepat di mana desain unik bukan prioritas utama. Contohnya, membuat dashboard admin, halaman internal, atau prototipe cepat untuk membuktikan konsep. Bootstrap menyediakan komponen yang konsisten dan fungsional "out-of-the-box".
+
+* **Saya akan memilih Tailwind CSS:** Ketika saya mengerjakan proyek yang membutuhkan desain kustom yang spesifik (misalnya, dari desainer UI/UX). Tailwind memungkinkan saya membangun desain tersebut tanpa harus "melawan" style bawaan framework. Ini memberi kebebasan penuh dan menjaga file CSS tetap kecil (dengan PurgeCSS) karena hanya utilitas yang dipakai yang masuk ke file final.
